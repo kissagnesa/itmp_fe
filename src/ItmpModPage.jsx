@@ -11,7 +11,7 @@ export const ItmpModPage =()=> {
         email: '',
     });
     useEffect(() => {
-        const fetchChessData = async () => {
+        const fetchData = async () => {
             try {
                 const response = await axios.get(`https://itmp.sulla.hu/users/${id}`);
                 setItmp(response.data);
@@ -20,7 +20,7 @@ export const ItmpModPage =()=> {
             }
         };
 
-        fetchChessData();
+        fetchData();
     }, [id]);
 
     const handleInputChange = event => {
