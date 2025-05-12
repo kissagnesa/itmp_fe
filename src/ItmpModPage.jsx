@@ -8,10 +8,7 @@ export const ItmpModPage =()=> {
     const navigate = useNavigate();
     const [itmp, setItmp] = useState({
         name: '',
-        birth_date: '',
-        world_ch_won: 0,
-        profile_url: '',
-        image_url: ''
+        email: '',
     });
     useEffect(() => {
         const fetchChessData = async () => {
