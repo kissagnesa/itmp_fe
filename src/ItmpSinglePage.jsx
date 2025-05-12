@@ -32,12 +32,13 @@ export const ItmpSinglePage =()=> {
             ) : (
                             <div className="card p-3">
                                 <div className="card-body">
-                                <h5 className="card-title">ITMP bejegyzés neve:{itmp.name}</h5>
-                                <div className="lead">E-mail cím: {itmp.birth_date}</div>
+                                <h5 className="text-dark">ITMP bejegyzés neve: {itmp.name}</h5>
+                            <div className="text-danger">E-mail cím: {itmp.email}</div>
+                                
                                 
                                   </div>
-                                  <div><NavLink to="/"><i className="bi bi-backspace"></i></NavLink>    
-<NavLink key="y" to={"/mod-itmp/" + itmp.id}><i className="bi bi-pencil"></i></NavLink></div>   
+                                  <div><NavLink to="/"><i className="bi bi-backspace btn btn-danger"></i></NavLink>    
+<NavLink key="y" to={"/mod-itmp/" + itmp.id}><i className="bi bi-pencil btn btn-primary"></i></NavLink></div>   
                             </div>
                         
                     )}
