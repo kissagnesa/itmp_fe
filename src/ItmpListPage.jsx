@@ -10,7 +10,7 @@ export const ItmpListPage=()=> {
         setFetchPending(true);
         fetch("https://itmp.sulla.hu/users")
             .then((res) => res.json())
-            .then((sakkok) => setItmp(sakkok))
+            .then((itmpk) => setItmp(itmpk))
             .catch(console.log)
             .finally(() => {
                 setFetchPending(false);
@@ -22,35 +22,19 @@ export const ItmpListPage=()=> {
                 <div className="spinner-border"></div>
             ) : (
                 <div>
-                    <h2>Sakkozók</h2>
-                    {chesses.map((chess, index) => (
+                    <h2>ITMP bejegyzések</h2>
+                    {itmps.map((itmp, index) => (
 
                         <div className="card col-sm-3 d-inline-block m-1 p-2" key={index}>
-                            <p className="text-dark">Sakkozó neve: {chess.name}</p>
-                            <p className="text-danger">Születési éve: {chess.birth_date}</p>
-                            <p className="text-danger">Nyert világbajnokságai: {chess.world_ch_won}</p>
+                            <p className="text-dark">ITMP bejegyzés neve: {itmp.name}</p>
+                            <p className="text-danger">E-mail cím {itmp.email}</p>
                             <div className="card-body">
-{/* Feltételes NavLink az abszolút URL-hez */}
-{chess.profile_url.startsWith('http') ? (
-                                    <a href={chess.profile_url} target="_blank" rel="noopener noreferrer">
-                                        Profile link
-                                    </a>
-                                ) : (
-                                    <NavLink to={chess.profile_url} exact>
-                                        Profile link
-                                    </NavLink>
-                                )}
+
                                 <br />
-                                <NavLink key={chess.id} to={"/chess/" + chess.id}>
-                                    <img alt={chess.nev}
-                                        className="img-fluid"
-                                        style={{ maxHeight: 200 }}
-                                        src={chess.image_url ? chess.image_url :
-                                            "https://via.placeholder.com/400x800"} /></NavLink>
-                                <br />
-                                <NavLink key="x" to={"/mod-chess/" + chess.id}>
+                                
+                                <NavLink key="x" to={"/mod-itmp/" + itmp.id}>
                                     <i className="bi bi-pencil"></i></NavLink> &nbsp;&nbsp;
-                                    <NavLink key="y" to={"/del-chess/" + chess.id}><i className="bi bi-trash3"></i></NavLink>
+                                    <NavLink key="y" to={"/del-chess/" + itmp.id}><i className="bi bi-trash3"></i></NavLink>
                             </div>
                         </div>
 
