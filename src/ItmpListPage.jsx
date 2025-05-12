@@ -31,7 +31,8 @@ export const ItmpListPage=()=> {
                             <div className="card-body">
 
                                 <br />
-                                
+                                <NavLink key="x" to={"/itmp/" + itmp.id}>
+                                    <i className="bi bi-eye"></i></NavLink> &nbsp;&nbsp;
                                 <NavLink key="x" to={"/mod-itmp/" + itmp.id}>
                                     <i className="bi bi-pencil"></i></NavLink> &nbsp;&nbsp;
                                     <NavLink key="y" to={"/del-chess/" + itmp.id}><i className="bi bi-trash3"></i></NavLink>
